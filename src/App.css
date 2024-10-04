@@ -1,0 +1,376 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  background: #86BBD8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./clock-3222267_1280.jpg') no-repeat center center;
+  background-size: cover;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.App {
+  text-align: center;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 0.5rem;
+  font-size: 3rem;
+}
+
+.TodoWrapper {
+  background: #33658A;
+  padding: 2rem;
+  border-radius: 5px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.due-date-input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.due-date-input {
+  outline: none;
+  background: none;
+  border: 1px solid #F6AE2D;
+  padding: 0.69rem;
+  font-size: 20px;
+  width: 190px;
+  color: white;
+}
+
+.tags-input {
+  color: white;
+  border: 1px solid #F6AE2D;
+  background: none;
+  width: 260px;
+  outline: none;
+  padding: 0.75rem;
+  font-size: 20px;
+}
+
+.due-date {
+  margin-right: 20px;
+}
+
+.EditTodoForm {
+  margin-left: -225px;
+  width: 100%;
+}
+
+.tags-cont {
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  gap: 5px;
+  color: white;
+}
+
+.tags-cont-i {
+  padding: 0.3rem;
+}
+
+.todo-input {
+  outline: none;
+  background: none;
+  border: 1px solid #F6AE2D;
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 350px;
+  color: #fff;
+  font-size: 20px;
+}
+
+.TodoWrapper {
+  padding: 20px;
+}
+
+.todo-container {
+  display: flex;
+}
+
+.todo-list {
+  margin-right: 20px;
+}
+
+.analytics {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.analytics {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.analytics h2 {
+  margin-bottom: 20px;
+  margin-top: -20px;
+  color: white;
+}
+
+.analytics p {
+  font-size: 18px;
+  margin: 5px 0;
+  color: white;
+}
+
+.todo-input::placeholder {
+  color: #ffffff4d;
+}
+
+.todo-btn {
+  background: #F6AE2D;
+  color: #37392E;
+  border: none;
+  padding: 0.85rem;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.tag-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #DC143C;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  width: 30%;
+  font-size: 30px;
+}
+
+.Todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #F6AE2D;
+  color: #fff;
+  padding: 0.8rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-size: 20px;
+}
+
+.Toastify__toast-container {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+.fa-trash {
+  margin-left: 0.75rem;
+}
+
+.incompleted {
+  color: #37392E;
+  cursor: pointer;
+}
+
+.completed {
+  color: #37392E;
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+}
+
+.due-date-input::placeholder,
+.tags-input::placeholder,
+.todo-input::placeholder {
+  color: #ffffff;
+}
+
+.todo-container {
+  display: flex;
+  height: calc(80vh - 100px);
+  overflow: hidden;
+}
+
+.todo-list {
+  overflow-y: auto;
+}
+
+.tags-cont {
+  margin-bottom: 16px;
+}
+
+.tags-cont-i {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.todo-list::-webkit-scrollbar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .TodoWrapper {
+    padding: 1rem;
+  }
+
+  .due-date-input,
+  .tags-input,
+  .todo-input {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .tags-cont {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tags-cont-i {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .todo-container {
+    flex-direction: column;
+    height: auto;
+    flex-grow: 1;
+  }
+
+  .todo-list {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+  }
+
+  .analytics {
+    margin-top: 1rem;
+    width: 100%;
+  }
+
+  .Todo {
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+  }
+
+  .tag-heading {
+    width: 100%;
+    font-size: 24px;
+  }
+
+  .todo-input {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .Toastify__toast-container {
+    transform: translate(0, 0);
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .due-date-input,
+  .tags-input,
+  .todo-input {
+    font-size: 16px;
+  }
+
+  .Todo {
+    padding: 0.5rem;
+    font-size: 18px;
+    flex-grow: 1;
+  }
+
+  .analytics h2 {
+    font-size: 24px;
+  }
+
+  .analytics p {
+    font-size: 16px;
+  }
+
+  .todo-btn {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .tag-heading {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .todo-container {
+    flex-direction: column;
+    height: auto;
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+
+  .todo-list {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+    overflow-y: auto;
+    max-height: 60vh;
+  }
+
+  .Todo {
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .todo-container {
+    overflow-y: auto;
+    max-height: 80vh;
+  }
+
+  .todo-list {
+    overflow-y: auto;
+    max-height: 60vh;
+  }
+}
